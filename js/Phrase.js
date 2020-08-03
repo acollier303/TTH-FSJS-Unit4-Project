@@ -17,10 +17,18 @@
         const ul = phraseDiv.firstElementChild;
 
         //Creates random phrase object and converts object to an array of letters.
-        const newPhrase = game.getRandomPhrase();
-        const letters = newPhrase.phrase.toString().split('');
+        //const newPhrase = game.getRandomPhrase();
+        const letters = this.phrase.toString().split('');
 
-        console.log(newPhrase, letters);
+        letters.forEach(letter => {
+           let li = document.createElement('li');
+
+           li.textContent = letter;
+           li.setAttribute('class', `hide letter ${letter}`);
+           ul.appendChild(li);
+           // console.log(phraseDiv);
+        });
+        console.log(letters);
 
         
 
