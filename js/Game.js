@@ -47,7 +47,7 @@
         
         
         this.activePhrase = phrase;
-        console.log(this.activePhrase);
+        //console.log(`Active Phrase: ${this.activePhrase.phrase} Random Phrase: ${phrase.phrase}`);
     };
 
     /**
@@ -60,8 +60,8 @@
             document.querySelectorAll('.key').forEach(key => {
                 key.addEventListener('click', (e) => {
                 const pressedKey = e.target.textContent;
-                Phrase.checkLetter(pressedKey);
-                console.log(pressedKey);
+                game.activePhrase.checkLetter(pressedKey);
+                //console.log(pressedKey);
             })
             
         });

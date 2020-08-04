@@ -39,7 +39,25 @@
     * @param (string) letter - Letter to check
     */
     checkLetter(letter) {
-        console.log(this.letter);
+        const gamePhrase = game.activePhrase.phrase.toString().split('');
+        const li = document.getElementsByTagName('li');
+
+        gamePhrase.forEach(char => {
+            if (letter == char){
+                for(let i = 0; i< li.length; i+=1){
+                    if(li[i].textContent == char){
+                        li[i].setAttribute('class', 'show');
+                    }
+                }
+                console.log('match');
+                //letter.setAttribute('class', `show letter ${letter}`);
+            }
+        });
+        
+            console.log(`activePhrase: ${gamePhrase}, letter: ${letter}`);
+
+        
+        
     };
 
     /**
