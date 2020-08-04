@@ -21,9 +21,9 @@
 
         letters.forEach(letter => {
            let li = document.createElement('li');
-
            li.textContent = letter;
-
+           
+           // filters letters and spaces & assigns correct class
            if (letter == false) {
             li.setAttribute('class', 'hide space');
             ul.appendChild(li); 
@@ -31,7 +31,6 @@
            li.setAttribute('class', `hide letter ${letter}`);
            ul.appendChild(li);
            };
-           // console.log(phraseDiv);
         });
         console.log(letters);
 

@@ -16,6 +16,12 @@
 //     logPhrase(game.getRandomPhrase());
 
 
-const game = new Game();
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+let game = '';
+const startButton = document.getElementById('btn__reset');
+console.log();
+
+//***Start button Event Listner ***
+startButton.addEventListener('click', (e) => {
+    game = new Game;
+    game.startGame();
+});
