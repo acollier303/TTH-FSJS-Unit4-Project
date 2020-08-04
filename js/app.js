@@ -24,4 +24,5 @@ console.log();
 startButton.addEventListener('click', (e) => {
     game = new Game;
     game.startGame();
+    game.handleInteraction();
 });

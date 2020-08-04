@@ -32,9 +32,20 @@
            ul.appendChild(li);
            };
         });
-        console.log(letters);
-
-        
-
     };
+
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        console.log(this.letter);
+    };
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {};
+
  }
