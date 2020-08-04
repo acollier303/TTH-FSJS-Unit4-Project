@@ -44,26 +44,28 @@
 
         gamePhrase.forEach(char => {
             if (letter == char){
-                for(let i = 0; i< li.length; i+=1){
-                    if(li[i].textContent == char){
-                        li[i].setAttribute('class', 'show');
-                    }
-                }
                 console.log('match');
+                this.showMatchedLetter(letter);
                 //letter.setAttribute('class', `show letter ${letter}`);
             }
         });
-        
-            console.log(`activePhrase: ${gamePhrase}, letter: ${letter}`);
-
-        
-        
+            //console.log(`activePhrase: ${gamePhrase}, letter: ${letter}`);
     };
 
     /**
     * Displays passed letter on screen after a match is found
     * @param (string) letter - Letter to display
     */
-    showMatchedLetter(letter) {};
+    showMatchedLetter(letter) {
+        const li = document.getElementsByTagName('li');
+
+        for(let i = 0; i< li.length; i+=1){
+            if(li[i].textContent == letter){
+                li[i].setAttribute('class', 'show');
+            }
+        }
+
+
+    };
 
  }
