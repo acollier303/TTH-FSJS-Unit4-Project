@@ -61,6 +61,7 @@
                 key.addEventListener('click', (e) => {
                 const pressedKey = e.target.textContent;
                 game.activePhrase.checkLetter(pressedKey);
+                game.checkForWin();
                 //console.log(pressedKey);
             })
             
@@ -74,7 +75,27 @@
     * @return {boolean} True if game has been won, false if game wasn't
     won
     */
-    checkForWin() {};
+    checkForWin() {
+        const phraseDiv = document.getElementById('phrase');
+        const ul = phraseDiv.firstElementChild;
+        const li = ul.children;
+        const liArray = Array.from(li);
+        let liFiltered = liArray.filter(char => char.className != 'hide space');
+        let num = 0;
+
+        for(let i =0; i<liFiltered.length; i+=1){
+            if (liFiltered[i].className == 'show'){
+                num+=1;
+            }
+            console.log(liFiltered.length, num);
+
+            if (num === liFiltered.length){
+                console.log('You Win');
+                return true;
+            }
+        }
+      
+    };
 
     /**
     * Increases the value of the missed property

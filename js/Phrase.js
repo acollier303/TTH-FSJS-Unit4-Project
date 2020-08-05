@@ -46,10 +46,8 @@
             if (letter == char){
                 console.log('match');
                 this.showMatchedLetter(letter);
-                //letter.setAttribute('class', `show letter ${letter}`);
-            }
+            } 
         });
-            //console.log(`activePhrase: ${gamePhrase}, letter: ${letter}`);
     };
 
     /**
