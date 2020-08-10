@@ -46,7 +46,10 @@
             if (letter == char){
                 console.log('match');
                 this.showMatchedLetter(letter);
-            } 
+            } else{
+                console.log('no match');
+                //game.removeLife();
+            }
         });
     };
 
@@ -62,8 +65,6 @@
                 li[i].setAttribute('class', 'show');
             }
         }
-
-
     };
 
  }

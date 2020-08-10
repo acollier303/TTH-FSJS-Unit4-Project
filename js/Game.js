@@ -81,17 +81,20 @@
         const li = ul.children;
         const liArray = Array.from(li);
         let liFiltered = liArray.filter(char => char.className != 'hide space');
-        let num = 0;
+        let num = 0; //counter for shown letters
 
+        // Iterate thru liFiltered to check for shown letters.
         for(let i =0; i<liFiltered.length; i+=1){
             if (liFiltered[i].className == 'show'){
                 num+=1;
             }
             console.log(liFiltered.length, num);
 
+            //If all letters shown return 'true'
             if (num === liFiltered.length){
-                console.log('You Win');
                 return true;
+            }else{
+                return false;
             }
         }
       
@@ -102,7 +105,15 @@
     * Removes a life from the scoreboard
     * Checks if player has remaining lives and ends game if player is out
     */
-    removeLife() {};
+    removeLife() {
+        const lives = document.getElementsByClassName('tries');
+        const livesArray = Array.from(lives);
+        
+
+
+        console.log(`lives left: ${lives.length}`);
+        
+    };
 
     /**
     * Displays game over message
