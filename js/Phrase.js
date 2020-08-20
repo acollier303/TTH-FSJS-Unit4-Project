@@ -44,10 +44,10 @@
 
         gamePhrase.forEach(char => {
             if (letter == char){
-                console.log('match');
+                //console.log('match');
                 this.showMatchedLetter(letter);
             } else{
-                console.log('no match');
+                //console.log('no match');
                 game.removeLife();
             }
         });

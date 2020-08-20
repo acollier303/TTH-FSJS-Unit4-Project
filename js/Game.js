@@ -88,7 +88,7 @@
             if (liFiltered[i].className == 'show'){
                 num+=1;
             }
-            console.log(liFiltered.length, num);
+            //console.log(liFiltered.length, num);
 
             //If all letters shown return 'true'
             if (num === liFiltered.length){
@@ -106,16 +106,25 @@
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
-        const livesDiv = document.getElementById('scoreboard')
-        const list = livesDiv.firstChild;
-        list.removeChild(list.firstChild);
-        console.log();
-        //list.removeChild(list.childNodes[0])
-        //const lives = document.getElementsByClassName('tries');
-        //const livesArray = Array.from(lives);
-        //livesArray.splice(0,1);
-        //console.log(`lives left: ${livesArray.length}`);
-        
+        const lives = document.getElementsByTagName('img');
+        const livesArray = Array.from(lives);
+        this.missed += 1;
+
+        if(this.missed == 1){
+            lives[0].src = `images/lostHeart.png`;
+        }
+
+        if(this.missed == 2){
+            lives[1].src = `images/lostHeart.png`;        }
+
+        if(this.missed == 3){
+            lives[2].src = `images/lostHeart.png`;        }
+
+        if(this.missed == 4){
+            lives[3].src = `images/lostHeart.png`;        }
+
+        if(this.missed == 5){
+            lives[4].src = `images/lostHeart.png`;        }
     };
 
 
