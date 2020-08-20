@@ -40,7 +40,6 @@
     */
     checkLetter(letter) {
         const gamePhrase = game.activePhrase.phrase.toString().split('');
-        const li = document.getElementsByTagName('li');
 
         gamePhrase.forEach(char => {
             if (letter == char){
@@ -48,7 +47,7 @@
                 this.showMatchedLetter(letter);
             } else{
                 //console.log('no match');
-                game.removeLife();
+                //return game.removeLife();
             }
         });
     };

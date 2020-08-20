@@ -84,14 +84,15 @@
         let num = 0; //counter for shown letters
 
         // Iterate thru liFiltered to check for shown letters.
-        for(let i =0; i<liFiltered.length; i+=1){
+        for(let i=0; i<liFiltered.length; i+=1){
             if (liFiltered[i].className == 'show'){
-                num+=1;
+                num = document.getElementsByClassName('show').length;
             }
-            //console.log(liFiltered.length, num);
+            console.log(liFiltered.length, num);
 
             //If all letters shown return 'true'
-            if (num === liFiltered.length){
+            if (num == liFiltered.length){
+                alert('you won')
                 return true;
             }else{
                 return false;
