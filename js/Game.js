@@ -106,14 +106,18 @@
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
-        const lives = document.getElementsByClassName('tries');
-        const livesArray = Array.from(lives);
-        
-
-
-        console.log(`lives left: ${lives.length}`);
+        const livesDiv = document.getElementById('scoreboard')
+        const list = livesDiv.firstChild;
+        list.removeChild(list.firstChild);
+        console.log();
+        //list.removeChild(list.childNodes[0])
+        //const lives = document.getElementsByClassName('tries');
+        //const livesArray = Array.from(lives);
+        //livesArray.splice(0,1);
+        //console.log(`lives left: ${livesArray.length}`);
         
     };
+
 
     /**
     * Displays game over message

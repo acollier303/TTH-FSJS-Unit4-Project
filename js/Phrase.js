@@ -48,7 +48,7 @@
                 this.showMatchedLetter(letter);
             } else{
                 console.log('no match');
-                //game.removeLife();
+                game.removeLife();
             }
         });
     };
