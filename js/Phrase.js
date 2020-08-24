@@ -45,10 +45,10 @@
             if (letter == char){
                 //console.log('match');
                 this.showMatchedLetter(letter);
-            } else{
-                //console.log('no match');
-                //return game.removeLife();
+            }else{
+                return
             }
+
         });
     };
 

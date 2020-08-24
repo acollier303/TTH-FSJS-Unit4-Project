@@ -92,7 +92,7 @@
 
             //If all letters shown return 'true'
             if (num == liFiltered.length){
-                alert('you won')
+                game.gameOver(true);
                 return true;
             }else{
                 return false;
@@ -125,7 +125,9 @@
             lives[3].src = `images/lostHeart.png`;        }
 
         if(this.missed == 5){
-            lives[4].src = `images/lostHeart.png`;        }
+            lives[4].src = `images/lostHeart.png`; 
+            game.gameOver(false);
+        }
     };
 
 
@@ -133,6 +135,22 @@
     * Displays game over message
     * @param {boolean} gameWon - Whether or not the user won the game
     */
-    gameOver(gameWon) {};
+    gameOver(gameWon) {
+        const startScreen = document.getElementById('overlay');
+        const gameOverMessage = document.getElementById("game-over-message");
+        
+        startScreen.style.display =''; //Show Start Screen
+        if(gameWon){
+           gameOverMessage.textContent = 'Congratulations! You won!'
+           startScreen.className = 'win'; 
+        }else{
+            gameOverMessage.textContent = 'You Lose. Better Luck Next Time!'
+            startScreen.className = 'lose'; 
+        }
+        
+       
+
+
+    };
 
  }
