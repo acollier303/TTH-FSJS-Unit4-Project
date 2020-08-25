@@ -53,20 +53,15 @@
     /**
      * Hadles interaction from user
      */
-    handleInteraction(){
-        //const key = document.getElementsByClassName('.key');
-
-        //pressed key event listener
-            document.querySelectorAll('.key').forEach(key => {
-                key.addEventListener('click', (e) => {
-                const pressedKey = e.target.textContent;
-                game.activePhrase.checkLetter(pressedKey);
-                game.checkForWin();
-                //console.log(pressedKey);
-            })
-            
-        });
-    };
+    // handleInteraction(){
+    //         document.querySelectorAll('.key').forEach(key => {
+    //             key.addEventListener('click', (e) => {
+    //             const pressedKey = e.target.textContent;
+    //             game.activePhrase.checkLetter(pressedKey);
+    //             game.checkForWin();
+    //         })
+    //     });
+    // };
 
     
 

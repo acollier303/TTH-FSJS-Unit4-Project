@@ -17,7 +17,12 @@ startButton.addEventListener('click', (e) => {
 * Handles onscreen keyboard button clicks
 * @param (HTMLButtonElement) button - The clicked button element
 */
-handleInteraction(button){
-    console.log(button);
+    handleInteraction(){
+            document.querySelectorAll('.key').forEach(key => {
+                key.addEventListener('click', (e) => {
+                const pressedKey = e.target.textContent;
+                game.activePhrase.checkLetter(pressedKey);
+                game.checkForWin();
+            })
+        });
     };
-    
