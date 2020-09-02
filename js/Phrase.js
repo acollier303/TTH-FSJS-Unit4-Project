@@ -40,15 +40,15 @@
     */
     checkLetter(letter) {
         const gamePhrase = game.activePhrase.phrase.toString().split('');
-
+        let match = null;
         gamePhrase.forEach(char => {
             if (letter == char){
-                //console.log('match');
+                console.log('match');
                 this.showMatchedLetter(letter);
-            }else{
-                return
-            }
 
+            }else{
+                console.log('no match');
+            }
         });
     };
 

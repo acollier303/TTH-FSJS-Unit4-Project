@@ -2,25 +2,25 @@
  * Project 4 - OOP Game App
  * Game.js */
 
- class Game {
-     constructor(){
-         this.missed = 0;
-         this.phrases = this.createPhrases();
-         this.activePhrase = 'null'; 
-     }
+class Game {
+    constructor(){
+        this.missed = 0;
+        this.phrases = this.createPhrases();
+        this.activePhrase = 'null'; 
+    }
 
-     /**
-      * Creates phrases for use in game
-      * @return (array) An array of phrases that could be used in the game
-      */
-     createPhrases(){
-         const phrases = [
+    /**
+     * Creates phrases for use in game
+    * @return (array) An array of phrases that could be used in the game
+    */
+    createPhrases(){
+        const phrases = [
             {phrase: 'Life is like a box of chocolates'},
             {phrase: 'Get in where you fit in'},
             {phrase:'Teamwork makes the team work'},
             {phrase:'Never give up'},
             {phrase: 'I paid the cost to be the boss'}
-         ];
+        ];
         return phrases; 
      }
 
@@ -40,30 +40,11 @@
     startGame() {
         const startScreen = document.getElementById('overlay');
         startScreen.style.display ='none'; //Hide Start Screen
-
         const rndPhrase = this.getRandomPhrase();
         const phrase = new Phrase(rndPhrase.phrase);
         phrase.addPhraseToDisplay();
-        
-        
         this.activePhrase = phrase;
-        //console.log(`Active Phrase: ${this.activePhrase.phrase} Random Phrase: ${phrase.phrase}`);
     };
-
-    /**
-     * Hadles interaction from user
-     */
-    // handleInteraction(){
-    //         document.querySelectorAll('.key').forEach(key => {
-    //             key.addEventListener('click', (e) => {
-    //             const pressedKey = e.target.textContent;
-    //             game.activePhrase.checkLetter(pressedKey);
-    //             game.checkForWin();
-    //         })
-    //     });
-    // };
-
-    
 
     /**
     * Checks for winning move
@@ -83,7 +64,7 @@
             if (liFiltered[i].className == 'show'){
                 num = document.getElementsByClassName('show').length;
             }
-            console.log(liFiltered.length, num);
+            //console.log(liFiltered.length, num);
 
             //If all letters shown return 'true'
             if (num == liFiltered.length){
@@ -142,10 +123,15 @@
             gameOverMessage.textContent = 'You Lose. Better Luck Next Time!'
             startScreen.className = 'lose'; 
         }
-        
-       
-
-
     };
 
- }
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(button){
+        console.log(button);
+        button.disabled = true;
+        this.activePhrase.checkLetter(button.textContent);
+    };
+};

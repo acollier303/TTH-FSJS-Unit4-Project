@@ -13,16 +13,12 @@ startButton.addEventListener('click', (e) => {
     //game.handleInteraction();
 });
 
-/**
-* Handles onscreen keyboard button clicks
-* @param (HTMLButtonElement) button - The clicked button element
-*/
-    handleInteraction(){
-            document.querySelectorAll('.key').forEach(key => {
-                key.addEventListener('click', (e) => {
-                const pressedKey = e.target.textContent;
-                game.activePhrase.checkLetter(pressedKey);
-                game.checkForWin();
-            })
-        });
-    };
+//******* Button event listner *******
+document.querySelectorAll('.key').forEach(key => {
+    key.addEventListener('click', (e) => {
+        const pressedKey = e.target;
+        game.handleInteraction(pressedKey);
+        // game.activePhrase.checkLetter(pressedKey);
+        // game.checkForWin();
+    })
+});
