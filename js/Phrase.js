@@ -44,12 +44,9 @@
         gamePhrase.forEach(char => {
             if (letter == char){
                 match +=1;
-                console.log('match');
-                this.showMatchedLetter(letter);
-            }else{
-                console.log('no match');
             }
         });
+
         if (match >= 1) {
             return true;
         }else{

@@ -130,8 +130,21 @@ class Game {
     handleInteraction(button){
         button.disabled = true;
         this.activePhrase.checkLetter(button.textContent);
+
+        // 'if statement' for checkLetter() 'true' or 'false'
         if (this.activePhrase.checkLetter(button.textContent) == false){
             this.removeLife();
+            button.className = 'wrong';
+        }else{
+            button.className = 'chosen';
+            const gamePhrase = game.activePhrase.phrase.toString().split('');
+
+            //If there is a match run showMatchedLetter()
+            gamePhrase.forEach(char => {
+                if (button.textContent == char){
+                    this.activePhrase.showMatchedLetter(char);
+                }
+            })
         }
         game.checkForWin(); 
     };
