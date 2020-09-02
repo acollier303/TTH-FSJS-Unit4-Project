@@ -18,7 +18,6 @@ document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', (e) => {
         const pressedKey = e.target;
         game.handleInteraction(pressedKey);
-        // game.activePhrase.checkLetter(pressedKey);
-        // game.checkForWin();
+        game.activePhrase.checkLetter(pressedKey);
     })
 });

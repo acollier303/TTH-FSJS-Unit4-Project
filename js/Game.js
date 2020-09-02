@@ -74,7 +74,6 @@ class Game {
                 return false;
             }
         }
-      
     };
 
     /**
@@ -106,7 +105,6 @@ class Game {
         }
     };
 
-
     /**
     * Displays game over message
     * @param {boolean} gameWon - Whether or not the user won the game
@@ -130,8 +128,11 @@ class Game {
     * @param (HTMLButtonElement) button - The clicked button element
     */
     handleInteraction(button){
-        console.log(button);
         button.disabled = true;
         this.activePhrase.checkLetter(button.textContent);
+        if (this.activePhrase.checkLetter(button.textContent) == false){
+            this.removeLife();
+        }
+        game.checkForWin(); 
     };
 };
