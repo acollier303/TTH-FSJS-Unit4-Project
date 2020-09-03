@@ -171,9 +171,14 @@ class Game {
         //---Change ClassName of onscreen keyboard buttons
         const buttons = document.getElementsByTagName('button');
         const buttonArray = Array.from(buttons);
-        console.log(buttonArray);
+        let number = 0;
+
         for(let j=0; j<buttonArray.length; j+=1){
             if(buttonArray[j].id != 'btn_reset'){
+
+                console.log(`Number of buttons: ${buttonArray.length}`)
+                number += 1;
+                console.log(`counter: ${number}`)
                 buttonArray[j].className = 'key';
                 buttonArray[j].disabled = false;
             }
