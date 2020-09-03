@@ -169,16 +169,15 @@ class Game {
         ul.querySelectorAll('*').forEach(n => n.remove());
 
         //---Change ClassName of onscreen keyboard buttons
-        const resetKey = document.getElementsByTagName('button');
-        //console.log(resetKey);
-        resetKey.forEach(key => {
-            if(key.disabled == 'true'){
-                key.disabled = 'false';
-            };
-
-            if(key.className == 'wrong' || key.className == 'chosen'){
-                key.className = ('key');
-            };
-        });
-    }
+        const buttons = document.getElementsByTagName('button');
+        const buttonArray = Array.from(buttons);
+        console.log(buttonArray);
+        for(let j=0; j<buttonArray.length; j+=1){
+            if(buttonArray[j].id != 'btn_reset'){
+                buttonArray[j].className = 'key';
+                buttonArray[j].disabled = false;
+            }
+        }
+        
+    }    
 };
