@@ -19,7 +19,8 @@ class Game {
             {phrase: 'Get in where you fit in'},
             {phrase:'Teamwork makes the dream work'},
             {phrase:'Never give up'},
-            {phrase: 'I paid the cost to be the boss'}
+            {phrase: 'I paid the cost to be the boss'},
+            {phrase: 'Create with purpose'}
         ];
         return phrases; 
      }
@@ -137,8 +138,8 @@ class Game {
 
         // 'if statement' for checkLetter() 'true' or 'false'
         if (this.activePhrase.checkLetter(button.textContent) == false){
-            this.removeLife();
             button.className = 'wrong';
+             this.removeLife();
         }else{
             button.className = 'chosen';
             const gamePhrase = game.activePhrase.phrase.toString().split('');
@@ -154,7 +155,7 @@ class Game {
     };
 
     /**
-     * Reset's game elements
+     * Resets game elements
      */
     resetGame(){
         //---Reset Lives---
@@ -171,18 +172,12 @@ class Game {
         //---Change ClassName of onscreen keyboard buttons
         const buttons = document.getElementsByTagName('button');
         const buttonArray = Array.from(buttons);
-        let number = 0;
 
         for(let j=0; j<buttonArray.length; j+=1){
             if(buttonArray[j].id != 'btn_reset'){
-
-                console.log(`Number of buttons: ${buttonArray.length}`)
-                number += 1;
-                console.log(`counter: ${number}`)
                 buttonArray[j].className = 'key';
                 buttonArray[j].disabled = false;
             }
         }
-        
     }    
 };
