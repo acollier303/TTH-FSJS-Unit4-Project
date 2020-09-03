@@ -4,16 +4,15 @@
 
 let game = '';
 const startButton = document.getElementById('btn__reset');
-console.log();
 
-//***Start button Event Listner ***
+//***Start button Event Listener ***
 startButton.addEventListener('click', (e) => {
     game = new Game;
     game.startGame();
     //game.handleInteraction();
 });
 
-//******* Button event listner *******
+//******* Button event listener *******
 document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', (e) => {
         const pressedKey = e.target;

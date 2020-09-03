@@ -17,7 +17,7 @@ class Game {
         const phrases = [
             {phrase: 'Life is like a box of chocolates'},
             {phrase: 'Get in where you fit in'},
-            {phrase:'Teamwork makes the team work'},
+            {phrase:'Teamwork makes the dream work'},
             {phrase:'Never give up'},
             {phrase: 'I paid the cost to be the boss'}
         ];
@@ -39,9 +39,10 @@ class Game {
     */
     startGame() {
         const startScreen = document.getElementById('overlay');
-        startScreen.style.display ='none'; //Hide Start Screen
         const rndPhrase = this.getRandomPhrase();
         const phrase = new Phrase(rndPhrase.phrase);
+        startScreen.style.display ='none'; //Hide Start Screen
+
         phrase.addPhraseToDisplay();
         this.activePhrase = phrase;
     };
@@ -114,12 +115,15 @@ class Game {
         const gameOverMessage = document.getElementById("game-over-message");
         
         startScreen.style.display =''; //Show Start Screen
+
         if(gameWon){
            gameOverMessage.textContent = 'Congratulations! You won!'
            startScreen.className = 'win'; 
+           this.resetGame();
         }else{
             gameOverMessage.textContent = 'You Lose. Better Luck Next Time!'
             startScreen.className = 'lose'; 
+            this.resetGame();
         }
     };
 
@@ -148,4 +152,36 @@ class Game {
         }
         game.checkForWin(); 
     };
+
+    /**
+     * Reset's game elements
+     */
+    resetGame(){
+        //---Reset Lives---
+        const lives = document.getElementsByTagName('img');
+        for(let i=0; i<lives.length; i+=1){
+            lives[i].src = 'images/liveHeart.png';
+        }
+
+        //--- Remove Li elements from Phrase Ul
+        const phraseDiv = document.getElementById('phrase');
+        const ul = phraseDiv.firstElementChild;
+        ul.querySelectorAll('*').forEach(n => n.remove());
+
+        //---Change ClassName of onscreen keyboard buttons
+        const resetKey = document.getElementsByTagName('button');
+        //console.log(resetKey);
+        resetKey.forEach(key => {
+            if(key.disabled == 'true'){
+                key.disabled = 'false';
+            };
+
+            if(key.className == 'wrong' || key.className == 'chosen'){
+                key.className = ('key');
+            };
+        });
+
+        console.log('reset');
+        console.log(typeof lives);
+    }
 };
