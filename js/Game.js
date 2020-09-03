@@ -180,8 +180,5 @@ class Game {
                 key.className = ('key');
             };
         });
-
-        console.log('reset');
-        console.log(typeof lives);
     }
 };
