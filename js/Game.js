@@ -85,7 +85,6 @@ class Game {
     */
     removeLife() {
         const lives = document.getElementsByTagName('img');
-        const livesArray = Array.from(lives);
         this.missed += 1;
 
         if(this.missed == 1){

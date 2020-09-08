@@ -9,20 +9,25 @@ const startButton = document.getElementById('btn__reset');
 startButton.addEventListener('click', (e) => {
     game = new Game;
     game.startGame();
-    //game.handleInteraction();
 });
 
 //******* Button event listener *******
-document.querySelectorAll('.key').forEach(key => {
-    key.addEventListener('click', (e) => {
-        const pressedKey = e.target;
-        game.handleInteraction(pressedKey);
-        game.activePhrase.checkLetter(pressedKey);
-    })
+const qwerty = document.getElementById('qwerty');
+qwerty.addEventListener('click', (e) => {
+    if(e.target.className == 'key'){
+    const pressedKey = e.target;
+    game.handleInteraction(pressedKey);
+    game.activePhrase.checkLetter(pressedKey);
+    };
 });
 
 //******* Keyboard Event Listener**********
-// const qwerty = document.getElementById('qwerty');
-// qwerty.addEventListener('keyup', (e) => {
-//         console.log(e.target);
-//     });
+
+document.addEventListener('keypress', (e) => {
+    const typedKey = e.key;
+    const button = document.getElementsByClassName('.key');
+    console.log(`Typed Key: ${typedKey} Button: ${button}`);
+    console.log(typeof button);
+    game.handleInteraction(button);
+    game.activePhrase.checkLetter(button);
+})
