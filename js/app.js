@@ -20,3 +20,9 @@ document.querySelectorAll('.key').forEach(key => {
         game.activePhrase.checkLetter(pressedKey);
     })
 });
+
+//******* Keyboard Event Listener**********
+// const qwerty = document.getElementById('qwerty');
+// qwerty.addEventListener('keyup', (e) => {
+//         console.log(e.target);
+//     });
