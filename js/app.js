@@ -25,9 +25,19 @@ qwerty.addEventListener('click', (e) => {
 
 document.addEventListener('keypress', (e) => {
     const typedKey = e.key;
-    const button = document.getElementsByClassName('.key');
-    console.log(`Typed Key: ${typedKey} Button: ${button}`);
-    console.log(typeof button);
-    game.handleInteraction(button);
-    game.activePhrase.checkLetter(button);
-})
+    const buttons = document.getElementsByClassName('key');
+    let button = null;
+    
+    const buttonsArray = Array.from(buttons);
+    console.log(buttonsArray);
+    for(let i=0; i<buttonsArray.length; i+=1){
+        if (buttonsArray[i].innerHTML == typedKey){
+            button = buttonsArray[i];
+            game.handleInteraction(button);
+            game.activePhrase.checkLetter(button);
+        }
+    }
+    //console.log(`Typed Key: ${typedKey} Button: ${button}`);
+    //console.log(typeof button);
+
+});
