@@ -13,7 +13,7 @@
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
-  --transition: all .2s ease-in-out;
+  --transition: all .3s ease-in-out;
 }
 
 /* main */
@@ -24,6 +24,7 @@
 }
 
 body {
+  background-color: #FDF9F2;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -111,7 +112,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #51A696;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -138,7 +139,7 @@ button {
 }
 
 .wrong {
-  background: #f7a964;
+  background: #F26052;
   color: #FFFFFF;
 }
 
@@ -180,7 +181,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #51A696;
 }
 
 .start a {

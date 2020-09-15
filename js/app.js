@@ -37,7 +37,7 @@ document.addEventListener('keypress', (e) => {
             game.activePhrase.checkLetter(button);
         }
     }
+
     //console.log(`Typed Key: ${typedKey} Button: ${button}`);
     //console.log(typeof button);
-
 });
