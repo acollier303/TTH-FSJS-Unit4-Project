@@ -6,7 +6,7 @@ class Game {
     constructor(){
         this.missed = 0;
         this.phrases = this.createPhrases();
-        this.activePhrase = 'null'; 
+        this.activePhrase = null; 
     }
 
     /**
@@ -70,7 +70,6 @@ class Game {
 
             //If all letters shown return 'true'
             if (num == liFiltered.length){
-                game.gameOver(true);
                 return true;
             }else{
                 return false;
@@ -151,6 +150,10 @@ class Game {
             })
         }
         game.checkForWin(); 
+        
+        if (game.checkForWin()){
+            this.gameOver(true);
+        }
     };
 
     /**
